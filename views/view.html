@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>이미지 상세보기</title>
+    <style>
+      img {
+        width: 400px;
+        height: 500px;
+      }
+    </style>
   </head>
   <body>
     <h1>img-view</h1>
     <img
       src="/{{ imgList.filename }}"
       alt="img"
-      style="width: 400px; height: 500px"
     />
     <a href="/">Back</a>
   </body>

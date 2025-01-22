@@ -1,6 +1,6 @@
-const fileModel = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
   return sequelize.define(
-    "file",
+    "image",
     {
       filename: {
         type: DataTypes.STRING,
@@ -11,8 +11,6 @@ const fileModel = (sequelize, DataTypes) => {
         allowNull: false,
       },
     },
-    { freezeTableName: true }
+    { freezeTableName: false }
   );
 };
-
-module.exports = fileModel;
