@@ -2,7 +2,7 @@ const fileModel = (sequelize, DataTypes) => {
   return sequelize.define(
     "file",
     {
-      fileName: {
+      filename: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -11,7 +11,7 @@ const fileModel = (sequelize, DataTypes) => {
         allowNull: false,
       },
     },
-    { freezeTableName: false }
+    { freezeTableName: true }
   );
 };
 
