@@ -25,31 +25,14 @@ app.get("/", async (req, res) => {
 app.get("/uploads/:filename", async (req, res) => {
   const filename = req.params.filename;
   const imgList = await file.findOne({
-    where: { file: filename },
+    where: { filename: filename },
   });
   res.render("view.html", { imgList });
 });
 
-/*
-ValidationErrorItem {
-      message: 'file.fileName cannot be null',
-      type: 'notNull Violation',
-      path: 'fileName',
-      value: null,
-      origin: 'CORE',
-      instance: [file],
-      validatorKey: 'is_null',
-      validatorName: null,
-      validatorArgs: []
-    }
-  ]
-}
-*/
-
 app.post("/upload", multerUpload.single("file"), async (req, res) => {
   try {
     const { filename, path } = req.file;
-    console.log(req.file);
     await file.create({ filename: filename, path: path });
     res.redirect("/");
   } catch (error) {
