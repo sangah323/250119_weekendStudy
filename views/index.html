@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>File Upload</title>
   </head>
+  <style>
+    img {
+      width: 200px;
+      height: 300px;
+    }
+  </style>
   <body>
     <h1>File Upload</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
@@ -16,7 +22,7 @@
       <div>
         <a href="/uploads/{{item.filename}}"
           >{{ item.filename }}
-          <img src="/{{ item.filename }}" style="width: 300px; height: 400px" />
+          <img src="/{{ item.filename }}"/>
         </a>
       </div>
     </div>
